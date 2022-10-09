@@ -21,7 +21,7 @@ def get_traveler_location(traveler):
 test_destination_index = get_traveler_location(test_traveler)
 # print(test_destination_index)
 
-# Task 2: Visiting Interesting Places
+# Task 3: Visiting Interesting Places
 attractions = [[] for destination in destinations]
 
 
@@ -49,8 +49,7 @@ add_attraction("Cairo, Egypt", ["Egyptian Museum", ["museum"]])
 #     print(attraction)
 
 
-# Task 3: Finding Best Places To Go
-
+# Task 4: Finding Best Places To Go
 def find_attractions(destination, interests):
     destination_index = get_destination_index(destination)
     attractions_in_city = attractions[destination_index]
@@ -68,8 +67,21 @@ la_arts = find_attractions("Cairo, Egypt", ["monument"])
 print(la_arts)
 
 
-# Task 4: See The Parts of a City You want to See
+# Task 5: See The Parts of a City You want to See
 
 def get_attractions_for_traveler(traveler):
     traveler_destination = traveler[1]
     traveler_interests = traveler[2]
+    traveler_attractions = find_attractions(traveler_destination, traveler_interests)
+    interests_string = "Hi " + traveler[0] + ", we think you'll like these places around " + traveler_destination + ": "
+    for i in range(len(traveler_attractions)):
+        if traveler_attractions[-1] == traveler_attractions[i]:
+            interests_string += "the " + str(traveler_attractions[i]) + "."
+        else:
+            interests_string += "the " + str(traveler_attractions[i]) + ", "
+    return interests_string
+
+
+smills_france = get_attractions_for_traveler(["Dereck Smill", "Paris, France", ["art"]])
+print(smills_france)
+
