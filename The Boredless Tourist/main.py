@@ -66,3 +66,10 @@ def find_attractions(destination, interests):
 
 la_arts = find_attractions("Cairo, Egypt", ["monument"])
 print(la_arts)
+
+
+# Task 4: See The Parts of a City You want to See
+
+def get_attractions_for_traveler(traveler):
+    traveler_destination = traveler[1]
+    traveler_interests = traveler[2]
